@@ -6,7 +6,7 @@ Ship your website as Android/iOS app. All the things you need to create a basic 
 - [WIP] Check app newest version
 
 ## Known bugs
-- in the fuse preview app, if share to social media, always opens a web page instead of installed native app
+- if share to social media, always opens a web page instead of installed native app
 - error on preview on android
 - error on export to android
 
