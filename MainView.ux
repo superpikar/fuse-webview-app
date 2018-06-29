@@ -1,6 +1,6 @@
 <App>
   <!-- global resources -->
-  <string ux:Global="MyApp.URL" ux:Value="http://google.com" />
+  <string ux:Global="MyApp.URL" ux:Value="https://medium.com/" />
   <float4 ux:Global="MyApp.StatusBarColor" ux:Value="#445f8e" />
 
   <!-- some UX configuration -->
@@ -10,7 +10,6 @@
   <!-- main app layout -->
   <DockPanel>
     <StatusBarBackground Dock="Top"/>
-
     <NativeViewHost>
       <WebView 
         Dock="Fill"

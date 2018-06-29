@@ -1,1 +1,6 @@
+.cache
+.uno
 build
+release.keystore
+fuse-webview-app.unoproj-local
+fuse-webview-app.unoproj-prod
