@@ -1,0 +1,28 @@
+<App>
+  <!-- global resources -->
+  <string ux:Global="MyApp.URL" ux:Value="http://google.com" />
+  <float4 ux:Global="MyApp.StatusBarColor" ux:Value="#445f8e" />
+
+  <!-- some UX configuration -->
+  <iOS.StatusBarConfig Style="Light" />
+  <Android.StatusBarConfig Color="{Resource MyApp.StatusBarColor}" />
+
+  <!-- main app layout -->
+  <DockPanel>
+    <StatusBarBackground Dock="Top"/>
+
+    <NativeViewHost>
+      <WebView 
+        Dock="Fill"
+        Url="{Resource MyApp.URL}"
+        ZoomEnabled="false"
+      >
+        <OnBackButton>
+          <!-- No need for TargetNode here, containing the GoBack in a navigation (webview in this case) is enough -->
+          <GoBack /> 
+        </OnBackButton>
+      </WebView>
+    </NativeViewHost>
+    <BottomBarBackground Dock="Bottom"/>
+  </DockPanel>
+</App>
