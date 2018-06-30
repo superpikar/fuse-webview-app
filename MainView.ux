@@ -1,6 +1,6 @@
 <App>
+  <JavaScript File="./MainView.js"></JavaScript>
   <!-- global resources -->
-  <string ux:Global="MyApp.URL" ux:Value="https://medium.com/" />
   <float4 ux:Global="MyApp.StatusBarColor" ux:Value="#445f8e" />
 
   <!-- some UX configuration -->
@@ -11,10 +11,15 @@
   <DockPanel>
     <StatusBarBackground Dock="Top"/>
     <NativeViewHost>
-      <WebView 
+      <WebView
+        ux:Name="webView"
         Dock="Fill"
-        Url="{Resource MyApp.URL}"
+        BaseUrl="{baseURL}"
+        Url="{URL}"
+        Visibility="{isVisible}"
         ZoomEnabled="false"
+        UrlChanged="{onUrlChanged}"
+        BeginLoading="{onBeginLoading}"
       >
         <OnBackButton>
           <!-- No need for TargetNode here, containing the GoBack in a navigation (webview in this case) is enough -->

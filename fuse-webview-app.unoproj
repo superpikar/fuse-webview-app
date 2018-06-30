@@ -2,9 +2,15 @@
   "RootNamespace":"Company.AppName",
   "Packages": [
     "Fuse",
-    "FuseJS"
+    "FuseJS",
+    "Fuse.Launcher"
   ],
   "Includes": [
-    "*"
-  ]
+    "*",
+    "**.js:FuseJS"
+  ],
+  "Mobile": {
+    "UriScheme": "appname",
+    "Orientations": "Auto",
+  }
 }
