@@ -1,0 +1,46 @@
+<App>
+  <JavaScript File="./MainView.js"></JavaScript>
+
+  <!-- some UX configuration -->
+  <iOS.StatusBarConfig Style="Light" />
+  <Android.StatusBarConfig Color="{Resource MyApp.ColorMain}" />
+
+  <!-- main app layout -->
+  <Panel>
+    <CheckAppVersionModal Layer="Background" ux:Name="modal"/>
+    <DockPanel Layer="Background" ux:Name="webview">
+      <StatusBarBackground Dock="Top"/>
+      <NativeViewHost>
+        <WebView
+          ux:Name="webView"
+          Dock="Fill"
+          Url="{URL}"
+          ZoomEnabled="false"
+          UrlChanged="{onUrlChanged}"
+          BeginLoading="{onBeginLoading}"
+        >
+          <PageLoaded>
+            <!-- cannot obtain document.querySelector here, don't know why  -->
+            <EvaluateJS Handler="{onPageLoaded}">
+              return {
+                url : document.location.href,
+              };
+            </EvaluateJS>
+          </PageLoaded>
+          <OnBackButton>
+            <GoBack /> 
+          </OnBackButton>
+        </WebView>
+      </NativeViewHost>
+      <BottomBarBackground Dock="Bottom"/>
+    </DockPanel>
+    <WhileTrue Value="{state.isModalOpen}">
+      <Set webview.Visibility="Hidden"/>
+      <Set modal.Visibility="Visible"/>
+    </WhileTrue>
+    <WhileFalse Value="{state.isModalOpen}">
+      <Set webview.Visibility="Visible"/>
+      <Set modal.Visibility="Collapsed"/>
+    </WhileFalse>
+  </Panel>
+</App>

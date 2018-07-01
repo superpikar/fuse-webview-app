@@ -11,6 +11,6 @@
   ],
   "Mobile": {
     "UriScheme": "appname",
-    "Orientations": "Auto",
+    "Orientations": "Portrait",
   }
 }

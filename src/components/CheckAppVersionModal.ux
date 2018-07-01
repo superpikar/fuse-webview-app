@@ -1,0 +1,22 @@
+<Panel ux:Class="CheckAppVersionModal">
+  <JavaScript File="./CheckAppVersionModal.js"></JavaScript>
+
+	<!-- Toggling the status of the AlternateRoot.IsEnabled will display/hide our "modal" dialog.
+		You could alternately wrap this in another `While...` trigger. -->
+	
+	<Rectangle Layer="Background" Color="{Resource MyApp.ColorMain}" />
+	<DockPanel Alignment="Center" Padding="0, 0, 0, 0" Margin="0, 0, 0, 0" MaxWidth="300">
+		<Rectangle Layer="Background" Color="1,1,0.98,1" Dock="Fill" />
+		<Panel Dock="Top" Padding="20, 50, 20, 30" Alignment="HorizontalCenter">
+			<Text Value="Your app version is {AppConfig.APP_VERSION}. Our newest app is {state.latestAppVersion}. Do you want to update?" TextWrapping="Wrap" TextAlignment="Center"></Text>
+		</Panel>
+		
+		<Panel>
+			<ColumnLayout ColumnCount="2" ColumnSpacing="2" />
+			<MyButton ButtonLabel="Later" Height="50" Clicked="{closeModal}" ButtonColor="{Resource MyApp.ColorButtonDisable}" />
+			<MyButton ButtonLabel="Yes, update!" Height="50" Clicked="{closeModal}" />
+		</Panel>
+		<Shadow Angle="93" Size="10" />
+		
+	</DockPanel>
+</Panel>

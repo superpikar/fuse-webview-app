@@ -1,0 +1,7 @@
+<ux:Resources>
+  <float4 ux:Global="MyApp.ColorMain"       		ux:Value="#445f8e" />
+	<float4 ux:Global="MyApp.ColorButton"     		ux:Value="#759de3"/>
+	<float4 ux:Global="MyApp.ColorButtonDisable"	ux:Value="#a2a8c4"/>
+	<float4 ux:Global="MyApp.ColorBackground" 		ux:Value="#FFFFFF"/>
+	<float4 ux:Global="MyApp.ColorDark"       		ux:Value="#313131"/>
+</ux:Resources>
