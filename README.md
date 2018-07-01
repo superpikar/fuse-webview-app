@@ -1,18 +1,43 @@
 # Fuse Webview App
 Ship your website as Android/iOS app. All the things you need to create a basic webview using [fusetools](https://fuse-open.github.io).
 
-## Features 
+## App Features 
 - Back to previous page on back button
 - Open BaseURL in webview if user navigate to about:blank
 - Open native app when user click on a URL (if different host)
-- Check app newest version
+- [WIP] Check app newest version
+- [WIP] Exit app modal
 
-## Setup
+## App Limitation
+- If share to whatsapp/email, sometimes opens a web page instead of installed native app
+- In android cannot exit application
 
 
-## Known bugs
-- If share to whatsapp, always opens a web page instead of installed native app
-- Module not found if require js using relative path. I dont know why
+## How to Setup
+1. Install FuseOpen https://fuse-open.github.io
+2. Install android SDK using CLI,  
+    ```
+    fuse install android
+    ```
+3. Put any accessible .json file in your server/cloud (i.e : http://yoursite.com/json/app-info.json), it should contain at least 
+    ```json
+    {
+      "appVersion": "2.0.0"
+    }
+    ```
+3. Before build your app, please change the URL of webview and  APP_INFO_JSON in `/src/AppConfig.js`
+    ```js
+    module.exports = {
+      APP_VERSION: 'current app version (i.e: 1.0.0)',
+      BASE_URL: 'url of webview',
+      APP_INFO_JSON: 'json file of latest app information',
+    }
+    ```
+4. Build your app following this step https://fuse-open.github.io/docs/basics/preview-and-export.html
+
+
+## Note for developer
+- Module not found if require js using relative path. I dont know why. Thus, I use require js using absolute path in all js.
 
 ## Reference
 - go back in webview 
