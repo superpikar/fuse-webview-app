@@ -1,5 +1,8 @@
 {
-  "RootNamespace":"Company.AppName",
+  "Title": "AppName",
+  "Description": "App description",
+	"Publisher": "PikarLabs Inc.",
+  "RootNamespace":"",
   "Packages": [
     "Fuse",
     "FuseJS",
@@ -11,6 +14,10 @@
   ],
   "Mobile": {
     "UriScheme": "appname",
-    "Orientations": "Portrait",
-  }
+    "Orientations": "Portrait"
+  },
+  "Android": {
+		"ApplicationLabel": "AppName",
+    "Description": "App description"
+	}
 }

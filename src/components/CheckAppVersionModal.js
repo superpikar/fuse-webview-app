@@ -1,3 +1,4 @@
+const InterApp = require('FuseJS/InterApp');
 const AppConfig = require('/src/AppConfig');
 const AppState = require('/src/AppState');
 const AppService = require('/src/AppService');
@@ -8,6 +9,15 @@ function openModal() {
 
 function closeModal() {
   AppState.setModalOpen(false);
+}
+
+function downloadApp() {
+  closeModal();
+  if (AppConfig.APP_OS === 'ios') {
+    InterApp.launchUri(AppConfig.APPSTORE_URL);
+  } else {
+    InterApp.launchUri(AppConfig.PLAYSTORE_URL);
+  }
 }
 
 AppService.getAppInfo()
@@ -23,5 +33,6 @@ module.exports = {
   AppConfig,
   state: AppState.state,
   openModal,
-  closeModal
+  closeModal,
+  downloadApp,
 }

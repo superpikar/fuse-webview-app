@@ -38,6 +38,7 @@ Ship your website as Android/iOS app. All the things you need to create a basic 
 
 ## Note for developer
 - Module not found if require js using relative path. I dont know why. Thus, I use require js using absolute path in all js.
+- Resource Color not applied on builded app. Looking for solution.
 
 ## Reference
 - go back in webview 

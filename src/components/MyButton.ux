@@ -1,11 +1,11 @@
-<Panel ux:Class="MyButton" Margin="0, 0, 0, 0" ButtonLabel="Button Label" ButtonColor="{Resource MyApp.ColorButton}">
+<Panel ux:Class="MyButton" Margin="0, 0, 0, 0" ButtonLabel="Button Label" ButtonColor="{Resource ColorButton}">
   <string ux:Property="ButtonLabel" />
   <float4 ux:Property="ButtonColor" />
   <Text Value="{ReadProperty ButtonLabel}" Color="#fff" Alignment="Center" TextAlignment="Center" Margin="20, 10, 20, 10" />
   <Rectangle ux:Name="button" Layer="Background" Color="{ReadProperty ButtonColor}" MinWidth="120">
   </Rectangle>
   <Clicked>
-    <Change button.Color="{Resource MyApp.ColorDark}" Duration=".15" Easing="CubicInOut" />
+    <Change button.Color="{Resource ColorDark}" Duration=".15" Easing="CubicInOut" />
   </Clicked>
 
 </Panel>

@@ -3,7 +3,7 @@
 
   <!-- some UX configuration -->
   <iOS.StatusBarConfig Style="Light" />
-  <Android.StatusBarConfig Color="{Resource MyApp.ColorMain}" />
+  <Android.StatusBarConfig Color="{Resource ColorMain}" />
 
   <!-- main app layout -->
   <Panel>
