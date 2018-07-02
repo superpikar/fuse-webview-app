@@ -5,7 +5,7 @@ Ship your website as Android/iOS app. All the things you need to create a basic 
 - Back to previous page on back button
 - Open BaseURL in webview if user navigate to about:blank
 - Open native app when user click on a URL (if different host)
-- [WIP] Check app newest version
+- Check app newest version on app startup
 - [WIP] Exit app modal
 
 ## App Limitation
@@ -33,8 +33,29 @@ Ship your website as Android/iOS app. All the things you need to create a basic 
       APP_INFO_JSON: 'json file of latest app information',
     }
     ```
-4. Build your app following this step https://fuse-open.github.io/docs/basics/preview-and-export.html
+4. Open the project with FuseStudio to preview your modification during development. Please note that webview only running on device, doesn't run on preview. 
 
+5. Draw your appicon as .png file, size 192x192 px. Then upload the file to https://jgilfelt.github.io/AndroidAssetStudio/icons-launcher.html to generate android icon. Put the output in `/src/assets/`. Or if you want to configure the icon yourslef, take a look at .unoproj file
+    ```
+    "Android": {
+      "Icons": {
+        "LDPI": "src/assets/drawable-mdpi/ic_launcher.png",
+        "MDPI": "src/assets/drawable-mdpi/ic_launcher.png",
+        "HDPI": "src/assets/drawable-hdpi/ic_launcher.png",
+        "XHDPI": "src/assets/drawable-xhdpi/ic_launcher.png",
+        "XXHDPI": "src/assets/drawable-xxhdpi/ic_launcher.png",
+        "XXXHDPI": "src/assets/drawable-xxxhdpi/ic_launcher.png"
+      }
+    }
+    ```
+
+
+5. Build your app for production release, following this step https://fuse-open.github.io/docs/basics/preview-and-export.html
+    ```
+    fuse build --target=Android --configuration=Release
+    ```
+
+6. grab the output .apk file in the `build\Android\Release\[unoproj_name].apk`
 
 ## Note for developer
 - Module not found if require js using relative path. I dont know why. Thus, I use require js using absolute path in all js.

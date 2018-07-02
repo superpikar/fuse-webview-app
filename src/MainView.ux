@@ -4,10 +4,13 @@
   <!-- some UX configuration -->
   <iOS.StatusBarConfig Style="Light" />
   <Android.StatusBarConfig Color="{Resource ColorMain}" />
+  
+  <!-- load global resources -->
+  <ColorResources/>
 
   <!-- main app layout -->
   <Panel>
-    <CheckAppVersionModal Layer="Background" ux:Name="modal"/>
+    <CheckAppVersionModal Layer="Overlay" ux:Name="modal"/>
     <DockPanel Layer="Background" ux:Name="webview">
       <StatusBarBackground Dock="Top"/>
       <NativeViewHost>

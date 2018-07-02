@@ -1,7 +1,7 @@
-<ux:Resources>
+<Panel ux:Class="ColorResources">
   <float4 ux:Global="ColorMain"       		ux:Value="#445f8e"/>
 	<float4 ux:Global="ColorButton"     		ux:Value="#759de3"/>
 	<float4 ux:Global="ColorButtonDisable"	ux:Value="#a2a8c4"/>
 	<float4 ux:Global="ColorBackground" 		ux:Value="#FFFFFF"/>
 	<float4 ux:Global="ColorDark"       		ux:Value="#313131"/>
-</ux:Resources>
+</Panel>

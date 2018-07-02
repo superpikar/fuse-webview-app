@@ -12,7 +12,7 @@
 		</Panel>
 		
 		<Panel>
-			<ColumnLayout ColumnCount="2" ColumnSpacing="2" />
+			<ColumnLayout ColumnCount="2" />
 			<MyButton ButtonLabel="Later" Height="50" Clicked="{closeModal}" ButtonColor="{Resource ColorButtonDisable}" />
 			<MyButton ButtonLabel="Yes, update!" Height="50" Clicked="{downloadApp}" />
 		</Panel>
